@@ -21,10 +21,10 @@ def makeDir():
 
 makeDir()
 
-vidcap = cv2.VideoCapture('video.mp4')
+vidcap = cv2.VideoCapture('video.MOV')
 
 def getFrame(sec):
-    vidcap.set(cv2.CAP_PROP_POS_MSEC,sec * 200)
+    vidcap.set(cv2.CAP_PROP_POS_MSEC,sec * 1000)
     hasFrames,image = vidcap.read()
     if hasFrames:
         cv2.imwrite(pathDir + "/image" + str(count) + ".jpg", image)     # save frame as JPG file
